@@ -37,7 +37,7 @@ function onBannerYearChange()
 
 function preload() {
   img = loadImage('AI_finance.png');
-  particle1=loadImage('particle1.png');
+  particle1=loadImage('../particles/finace.png');
 }
 
 
@@ -50,21 +50,20 @@ function setup() {
     financeColor_B = random(90, 100);
 
 
-    colorMode(HSB,100);
-	var financeColor=color(financeColor_H,financeColor_S,financeColor_B);
-	background(financeColor);
+  colorMode(HSB,100);
+	// var financeColor=color(financeColor_H,financeColor_S,financeColor_B);
+	// background(financeColor);
 
-	smooth();
+	// smooth();
 
 	centerX = random(500,628);
-    centerY = random(280,360);
-    radius = random(1300,1800);
-    angleMode(DEGREES);
-    lineH = random(9,12);
-    lineS = 64;
-    lineB = 100;
-    lineA = 30;
-	// drawParticle1();
+  centerY = random(280,360);
+  radius = random(1300,1800);
+  angleMode(DEGREES);
+  lineH = random(9,12);
+  lineS = 64;
+  lineB = 100;
+  lineA = 30;
 	//image(img, 0, 0, 1128, 640);
 
 }
@@ -75,7 +74,7 @@ function draw() {
 	noFill();
 	var lineColor=color(lineH,lineS,lineB,lineA);
 	stroke(lineColor, .5);
-   beginShape();
+  beginShape();
     for (var i = -200; i <= totalDegrees; i++) {
       var noiseFactor = noise(i / 70, frameCount / 120);
       var x = centerX + radius * cos(i) * noiseFactor;
@@ -86,21 +85,21 @@ function draw() {
   radius -= 7;
   lineA -= 0.2;
 
-	if(updateFlag)
-	{
+	if(updateFlag) {
+    console.log('draw');
 		updateFlag = false;
 		    radius = random(1300,1800);
 			    lineA = 30;
 		clear();
 		var financeColor=color(financeColor_H,financeColor_S,financeColor_B);
 		background(financeColor);
+    drawParticle();
 	}
 
-	if (radius < 50)
-	{
+	if (radius < 50) {
 		drawText();
-	image(img, 0, 0, 1128, 640);
-	noLoop();
+  	image(img, 0, 0, 1128, 640);
+  	noLoop();
 	}
 }
 
@@ -153,12 +152,12 @@ function changeColor() {
 	loop();
 }
 
-// function drawParticle1(){
-// 	var particleNum=random(2,5);
-// 	for (var i = 0; i < particleNum; i++) {
-// 		var particleSize=random(0.5,3);
-// 		var particleX=random(0,1128);
-// 		var particleY=random(0,640);
-// 		image(particle1,particleX,particleY,69*particleSize,160*particleSize);
-// 	}
-// }
+function drawParticle(){
+	// var particleNum=random(2,24);
+	for (var i = 0; i < 10; i++) {
+		var particleSize=random(0.5,3);
+		var particleX=random(0,1128);
+		var particleY=random(0,640);
+		image(particle1,particleX,particleY, 20*particleSize, 20*particleSize);
+	}
+}
