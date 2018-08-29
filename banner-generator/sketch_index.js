@@ -72,7 +72,6 @@ function setup() {
 	rect(0, 0, buildingL, buildingH);
     fill(detailColor);
 	var windowCol_B = int(random(-1,1))+windowCol_A;
-<<<<<<< HEAD
 	for (var x = gapCol; x < buildingL-gapCol; x+=(buildingL-gapCol)/windowRow_A) {
 		for (var y = +gapRow; y < buildingH-gapRow; y+=(buildingH-gapRow)/windowCol_B){
 			rect(x,y,(buildingL-gapCol)/windowRow_A-gapCol,(buildingH-gapRow)/windowCol_B-gapRow);
@@ -83,7 +82,6 @@ function setup() {
 	shearX(-PI / 4.0);
 	fill(buildingColor);
 	rect(-buildingW,-buildingL,buildingW,buildingL);
-=======
 	// for (var x = gapCol; x < buildingL-gapCol; x+=(buildingL-gapCol)/windowRow_A) {
 	// 	for (var y = +gapRow; y < buildingH-gapRow; y+=(buildingH-gapRow)/windowCol_B){
 	// 		rect(x,y,(buildingL-gapCol)/windowRow_A-gapCol,(buildingH-gapRow)/windowCol_B-gapRow);
@@ -94,7 +92,6 @@ function setup() {
 	// shearX(-PI / 4.0);
 	// fill(buildingColor);
 	// rect(-buildingW,-buildingL,buildingW,buildingL);
->>>>>>> Add change time color btn
 }
 
 function draw() {
