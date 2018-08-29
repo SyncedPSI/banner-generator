@@ -1,5 +1,9 @@
 var img;
 var timeInterval='7.21-7.28';
+<<<<<<< HEAD
+=======
+var timeColor = '#FF0033';
+>>>>>>> Add change time color btn
 var bannerYear='2018';
 var centerX;
 var centerY;
@@ -118,7 +122,11 @@ function drawText(){
 	textSize(70);
 	textStyle(BOLD);
 
+<<<<<<< HEAD
 	fill(color('#FF0033'));
+=======
+	fill(color(timeColor));
+>>>>>>> Add change time color btn
 	if(timeInterval.length == 0)
 	{
 		return;
