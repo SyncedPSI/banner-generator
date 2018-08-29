@@ -74,7 +74,7 @@ function draw() {
 
 	noFill();
 	var lineColor=color(lineH,lineS,lineB,lineA);
-	stroke(lineColor);
+	stroke(lineColor, .5);
    beginShape();
     for (var i = -200; i <= totalDegrees; i++) {
       var noiseFactor = noise(i / 70, frameCount / 120);
