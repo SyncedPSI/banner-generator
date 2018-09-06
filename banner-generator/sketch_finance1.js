@@ -27,7 +27,7 @@ function onBannerYearChange() {
 
 function preload() {
     img = loadImage('AI_Finance.png');
-    particle1 = loadImage('particle1.png');
+    particle1 = loadImage('../particles/finace.png');
 }
 
 function setup() {
@@ -37,7 +37,7 @@ function setup() {
     financeColor_B = random(90, 100);
     xstart = random(10);
     ystart = random(10);
-    
+
 
 
     particleNum = random(4, 8);
@@ -118,7 +118,7 @@ function drawText() {
 
 function drawParticle1() {
     for (var i = 0; i < particleNum; i++) {
-        
+
         image(particle1, particleParams[i][1], particleParams[i][2], 100 * particleParams[i][0], 100 * particleParams[i][0]);
     }
 }

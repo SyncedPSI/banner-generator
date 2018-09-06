@@ -1,3 +1,5 @@
+/* eslint-disable */
+
 var img;
 var timeInterval='7.21-7.28';
 var timeColor = '#FFF459';
@@ -37,7 +39,24 @@ function onBannerYearChange()
 
 function preload() {
   img = loadImage('AI_finance.png');
-  particle1=loadImage('../particles/finace.png');
+
+  particle = {
+    1: loadImage('../particles/finance/1.png'),
+    2: loadImage('../particles/finance/2.png'),
+    3: loadImage('../particles/finance/3.png'),
+    4: loadImage('../particles/finance/4.png'),
+    5: loadImage('../particles/finance/5.png'),
+    6: loadImage('../particles/finance/6.png'),
+    7: loadImage('../particles/finance/7.png'),
+    8: loadImage('../particles/finance/8.png'),
+    9: loadImage('../particles/finance/9.png'),
+    10: loadImage('../particles/finance/10.png'),
+    11: loadImage('../particles/finance/11.png'),
+    12: loadImage('../particles/finance/12.png'),
+    13: loadImage('../particles/finance/13.png'),
+    14: loadImage('../particles/finance/14.png'),
+    15: loadImage('../particles/finance/15.png'),
+  }
 }
 
 
@@ -81,12 +100,12 @@ function draw() {
       var y = centerY + radius * sin(i) * noiseFactor;
       curveVertex(x, y);
     }
+
   endShape(CLOSE);
   radius -= 7;
   lineA -= 0.2;
 
 	if(updateFlag) {
-    console.log('draw');
 		updateFlag = false;
 		    radius = random(1300,1800);
 			    lineA = 30;
@@ -153,11 +172,11 @@ function changeColor() {
 }
 
 function drawParticle(){
-	// var particleNum=random(2,24);
-	for (var i = 0; i < 10; i++) {
-		var particleSize=random(0.5,3);
-		var particleX=random(0,1128);
-		var particleY=random(0,640);
-		image(particle1,particleX,particleY, 20*particleSize, 20*particleSize);
-	}
+  for (var i = 0; i < 10; i++) {
+    var particleNum= parseInt(random(1,15));
+    var particleSize=random(0.5,3);
+    var particleX=random(0,1128);
+    var particleY=random(0,640);
+    image(particle[particleNum],particleX,particleY, 20*particleSize, 20*particleSize);
+  }
 }

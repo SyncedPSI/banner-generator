@@ -37,7 +37,14 @@ function onBannerYearChange()
 
 function preload() {
   img = loadImage('AI_sales.png');
-  particle1=loadImage('particle1.png');
+  particle = {
+    1: loadImage('../particles/sales/1.png'),
+    2: loadImage('../particles/sales/2.png'),
+    3: loadImage('../particles/sales/3.png'),
+    4: loadImage('../particles/sales/4.png'),
+    5: loadImage('../particles/sales/5.png'),
+    6: loadImage('../particles/sales/6.png'),
+  }
 }
 
 
@@ -94,6 +101,7 @@ function draw() {
 		clear();
 		var medicalColor=color(medicalColor_H,medicalColor_S,medicalColor_B);
 		background(medicalColor);
+    drawParticle();
 	}
 
 	if (radius < 50)
@@ -152,12 +160,12 @@ function changeColor() {
 	loop();
 }
 
-// function drawParticle1(){
-// 	var particleNum=random(2,5);
-// 	for (var i = 0; i < particleNum; i++) {
-// 		var particleSize=random(0.5,3);
-// 		var particleX=random(0,1128);
-// 		var particleY=random(0,640);
-// 		image(particle1,particleX,particleY,69*particleSize,160*particleSize);
-// 	}
-// }
+function drawParticle(){
+  for (var i = 0; i < 10; i++) {
+    var particleNum= parseInt(random(1,6));
+    var particleSize=random(0.5,3);
+    var particleX=random(0,1128);
+    var particleY=random(0,640);
+    image(particle[particleNum],particleX,particleY, 20*particleSize, 20*particleSize);
+  }
+}

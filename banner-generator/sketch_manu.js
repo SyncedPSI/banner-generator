@@ -37,7 +37,15 @@ function onBannerYearChange()
 
 function preload() {
   img = loadImage('AI_manu.png');
-  particle1=loadImage('particle1.png');
+  particle = {
+    1: loadImage('../particles/manu/1.png'),
+    2: loadImage('../particles/manu/2.png'),
+    3: loadImage('../particles/manu/3.png'),
+    4: loadImage('../particles/manu/4.png'),
+    5: loadImage('../particles/manu/5.png'),
+    6: loadImage('../particles/manu/6.png'),
+    7: loadImage('../particles/manu/7.png'),
+  }
 }
 
 
@@ -94,6 +102,7 @@ function draw() {
 		clear();
 		var medicalColor=color(medicalColor_H,medicalColor_S,medicalColor_B);
 		background(medicalColor);
+    drawParticle();
 	}
 
 	if (radius < 50)
@@ -152,12 +161,12 @@ function changeColor() {
 	loop();
 }
 
-// function drawParticle1(){
-// 	var particleNum=random(2,5);
-// 	for (var i = 0; i < particleNum; i++) {
-// 		var particleSize=random(0.5,3);
-// 		var particleX=random(0,1128);
-// 		var particleY=random(0,640);
-// 		image(particle1,particleX,particleY,69*particleSize,160*particleSize);
-// 	}
-// }
+function drawParticle(){
+  for (var i = 0; i < 10; i++) {
+    var particleNum= parseInt(random(1,7));
+    var particleSize=random(0.5,3);
+    var particleX=random(0,1128);
+    var particleY=random(0,640);
+    image(particle[particleNum],particleX,particleY, 20*particleSize, 20*particleSize);
+  }
+}

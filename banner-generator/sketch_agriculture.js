@@ -37,7 +37,20 @@ function onBannerYearChange()
 
 function preload() {
   img = loadImage('AI_agriculture.png');
-  particle1=loadImage('particle1.png');
+  particle = {
+    1: loadImage('../particles/agriculture/1.png'),
+    2: loadImage('../particles/agriculture/2.png'),
+    3: loadImage('../particles/agriculture/3.png'),
+    4: loadImage('../particles/agriculture/4.png'),
+    5: loadImage('../particles/agriculture/5.png'),
+    6: loadImage('../particles/agriculture/6.png'),
+    7: loadImage('../particles/agriculture/7.png'),
+    8: loadImage('../particles/agriculture/8.png'),
+    9: loadImage('../particles/agriculture/9.png'),
+    10: loadImage('../particles/agriculture/10.png'),
+    11: loadImage('../particles/agriculture/11.png'),
+    12: loadImage('../particles/agriculture/12.png'),
+  }
 }
 
 
@@ -64,7 +77,6 @@ function setup() {
     lineS = 90;
     lineB = 70;
     lineA = 30;
-	// drawParticle1();
 	//image(img, 0, 0, 1128, 640);
 
 }
@@ -94,6 +106,7 @@ function draw() {
 		clear();
 		var medicalColor=color(medicalColor_H,medicalColor_S,medicalColor_B);
 		background(medicalColor);
+    drawParticle();
 	}
 
 	if (radius < 50)
@@ -154,12 +167,12 @@ function changeColor() {
 	loop();
 }
 
-// function drawParticle1(){
-// 	var particleNum=random(2,5);
-// 	for (var i = 0; i < particleNum; i++) {
-// 		var particleSize=random(0.5,3);
-// 		var particleX=random(0,1128);
-// 		var particleY=random(0,640);
-// 		image(particle1,particleX,particleY,69*particleSize,160*particleSize);
-// 	}
-// }
+function drawParticle(){
+	for (var i = 0; i < 10; i++) {
+    var particleNum= parseInt(random(1,12));
+    var particleSize=random(0.5,3);
+    var particleX=random(0,1128);
+    var particleY=random(0,640);
+    image(particle[particleNum],particleX,particleY, 20*particleSize, 20*particleSize);
+  }
+}
